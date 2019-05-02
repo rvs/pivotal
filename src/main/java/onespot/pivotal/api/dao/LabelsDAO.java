@@ -21,6 +21,8 @@ public class LabelsDAO extends DAO {
         return jsonRestClient.get(new TypeToken<List<Label>>(){}.getType(), path, params);
     }
 
+    public Label add(Label label) { return jsonRestClient.post(Label.class, path, params, label); }
+
     public Label get(int id) {
         return jsonRestClient.get(Label.class, "/"+id, params);
     }

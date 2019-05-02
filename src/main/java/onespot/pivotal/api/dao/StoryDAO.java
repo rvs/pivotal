@@ -24,6 +24,10 @@ public class StoryDAO extends DAO {
         jsonRestClient.put(Story.class, path, params, story);
     }
 
+    public LabelsDAO labels() {
+        return new LabelsDAO(jsonRestClient, path + "/labels", params);
+    }
+
     public OwnersDAO owners() {
         return new OwnersDAO(jsonRestClient, path + "/owners", params);
     }
