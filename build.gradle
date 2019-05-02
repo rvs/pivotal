@@ -20,4 +20,5 @@ dependencies {
     compile 'org.slf4j:slf4j-simple:1.6.2'
     compile 'com.google.guava:guava:16.0'
     compile 'com.google.code.gson:gson:2.2.2'
+    compile 'com.beust:jcommander:1.72'
 }
