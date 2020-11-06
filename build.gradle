@@ -1,6 +1,8 @@
 apply plugin: 'java'
 apply plugin: 'maven'
+apply plugin: 'groovy'
 
+group = 'org.shaposhnik.java'
 sourceCompatibility = 1.8
 version = '0.0.11'
 
@@ -21,4 +23,24 @@ dependencies {
     compile 'com.google.guava:guava:16.0'
     compile 'com.google.code.gson:gson:2.2.2'
     compile 'com.beust:jcommander:1.72'
+    compile 'org.codehaus.groovy:groovy-all:2.5.8'
+    // compile 'org.codehaus.groovy:groovy-dateutil:3.0.6'
+}
+
+sourceSets.main.resources.srcDirs += [ "src/main/scripts" ]
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'lopd_importer', 'Implementation-Version': version
+    }
+}
+
+task fatJar(type: Jar) {
+    dependsOn install
+    manifest {
+        attributes 'Manifest-Version': '1.0', 'Implementation-Title': 'gd-web-lexnet-firma-client', 'Implementation-Version': version, 'Main-Class': 'groovy.ui.GroovyMain'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }  }
+    with jar
 }

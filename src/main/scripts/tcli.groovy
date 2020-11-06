@@ -1,4 +1,13 @@
-package onespot.pivotal.devUtils
+@Grab(group='com.beust', module='jcommander', version='1.72')
+@Grab(group='org.shaposhnik.java', module='pivotal', version='0.0.11')
+@Grab(group='org.codehaus.groovy', module='groovy-datetime', version='2.5.8')
+@Grab(group='org.codehaus.groovy', module='groovy-dateutil', version='2.5.8')
+@Grab(group='org.codehaus.groovy', module='groovy-jsr223', version='2.5.8')
+@Grab(group='org.codehaus.groovy', module='groovy-macro', version='2.5.8')
+@Grab(group='org.codehaus.groovy', module='groovy-nio', version='2.5.8')
+@Grab(group='org.codehaus.groovy', module='groovy-sql', version='2.5.8')
+@Grab(group='org.codehaus.groovy', module='groovy-swing', version='2.5.8')
+@Grab(group='org.codehaus.groovy', module='groovy-xml', version='2.5.8')
 
 import onespot.pivotal.api.PivotalTracker
 import onespot.pivotal.api.resources.Label
